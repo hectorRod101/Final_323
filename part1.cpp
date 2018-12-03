@@ -100,7 +100,7 @@ int main(int argc, char *argv[])
 
 
 	}
-
+	line[line.size()-1] = ' ';
 	output << line ;
 
 
