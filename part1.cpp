@@ -10,9 +10,11 @@ int main(int argc, char *argv[])
 
 	char current;
 	char meme[2];
-	int tracker = 0;
+	int tracker = 0, counter =0 ;
+	bool testcase = true;
 	ifstream input;
 	ofstream output;
+
 
 
 	//cout << "Enter filename: ";
@@ -31,8 +33,17 @@ int main(int argc, char *argv[])
 
 	while (!input.eof() ) {
 
-		input.get(current);
+		if(testcase) {
+			input.get(current);
+		}
+		else{
+			testcase = true;
+			current = '\n';
+		}
 
+
+
+			counter ++ ;
 
 			if(current == '/' || current == '*'){
 
@@ -49,8 +60,12 @@ int main(int argc, char *argv[])
 				if(current == '\n') {
 					meme[0]= ' ';
 					meme[1] = ' ';
+					testcase = false;
 
 				}
+
+
+
 			}
 			else if( meme[0] == '/' && meme[1]== '*'){
 
@@ -64,19 +79,29 @@ int main(int argc, char *argv[])
 
 			else if(current !=' ') {
 
-				line += current;
+				if(current != '\n'){
+
+					line += current;
+				}else if(current == '\n' ){
+					if(isalpha(line[0])){
+
+						output << line << endl;
+						line = "";
+
+
+					}
+
+
+				}
+
+
+
 			}
 
-
-			if(current == '\n' || current == '\0') {
-
-				output << line;
-				line = "";
-			}
 
 	}
 
-output << '\n' << line;
+	output << line ;
 
 
 	input.close();

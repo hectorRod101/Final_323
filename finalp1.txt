@@ -10,9 +10,45 @@
             e33a         =5     ;
             show( ab1      ); //display ab1
 
+
+
+
             /* compute the value of
                 the expression */
 
                d18=    ab1 *    (cd + 2 *        e33a)      ;
-               show(      d18  );      //display the value of d18
-        end
+
+
+               show(      d18  );      //display the value of d18s
+               //this is dumb test 1
+               //this is dumb test 2
+               //this is dumb test 3
+               /*
+
+               this is dumb test block 1
+               this is dumb test block 2
+               this is dumb test block 3
+
+
+               this is dumb test block 4
+
+
+
+
+               this is dumb test block 5
+
+
+
+
+
+
+
+
+
+
+
+
+               */
+               //
+
+               end
